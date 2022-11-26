@@ -7,6 +7,7 @@
 Using this website you can create a to-do list.
 you can:
 -add tasks
+-edit task
 -mark it as completed
 -sort completed tasks
 -sort active tasks
