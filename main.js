@@ -40,7 +40,7 @@ let generateTask = () =>{
 }
 generateTask();
 
-addBtn.addEventListener("click", () =>{
+let addTask = () =>{
     if(input.value !== ""){
 
 
@@ -76,8 +76,14 @@ addBtn.addEventListener("click", () =>{
     localStorage.setItem("data", JSON.stringify(data))
     statusSet();
     countRemaining();
-});
+}
 
+addBtn.addEventListener("click", addTask);
+input.addEventListener("keypress",(e)=>{
+    if(e.key === 'Enter'){
+        addTask();
+    }
+})
 let deleteTask = (x) =>{
     
     let id = x-1;
