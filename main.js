@@ -27,6 +27,7 @@ let generateTask = () =>{
         <i onClick="editTask(${x.id})" class="fa-solid fa-pen-to-square" id="editBtn"></i>
 
         <i onClick="deleteTask(id)" class="fa-solid fa-x deletebtn" id="${x.id+1}" ></i>
+        
 
       </div>
         

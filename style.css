@@ -23,7 +23,7 @@ main{
 }
 .container{
     width: 28rem;
-    height: 500px;
+    height: 450px;
     margin-top: 6rem;
     
 }
@@ -136,6 +136,7 @@ main{
 .controls p {
     font-size: 15px;
     color:hsl(234, 11%, 52%) ;
+    cursor: pointer;
     
 }
 .controls h6{
@@ -145,17 +146,28 @@ main{
 }
 .controls p:hover{
     color: #fff;
-    cursor: pointer;
+   
 }
 .controls div{
     display: flex;
     gap: 10px;
 }
-.controls div #all:focus{
-    color: hsl(220, 98%, 61%);
+
+.sort{
+    display: flex;
+    justify-content: space-around;
+    background-color: hsl(235, 24%, 19%);
+    margin-top: 10px;
+    padding-block: 15px;
+    border-radius: 5px;
 }
-
-
+.sort p{
+    cursor: pointer;
+}
+.sort p:hover{
+    color: rgb(255, 255, 255) !important;
+    
+}
 .theme-change .light{
     display: block;
 }
@@ -180,11 +192,11 @@ main{
     color: hsl(234, 11%, 52%);
 }
 
-.theme-change .controls{
+.theme-change .controls, .theme-change .sort{
     background-color: #fff;
 }
-.theme-change .controls p:hover{
-    color: black;
+.theme-change .controls p:hover, .theme-change .sort p:hover{
+    color: black !important;
 }
 .theme-change{
     background-color: rgb(237, 237, 237);
@@ -195,9 +207,11 @@ main{
     color: hsl(235, 19%, 35%);
 }
 
+
 @media (max-width: 560px) {
     .container{
         width: 90%;
+        height: 380px;
     }
     .controls{
         gap: 20px;

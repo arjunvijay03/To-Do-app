@@ -21,14 +21,17 @@
       <div class="heading">
         <h1>TODO</h1>
         <div class="theme" id="theme">
-        <i class="fa-solid fa-sun dark" id="dark"></i>
-        <i class="fa-solid fa-moon light" id="light"></i>
+        <!-- <i class="fa-solid fa-sun dark" id="dark"></i> -->
+        <img class="dark" id="dark" src="./images/icon-sun.svg" alt="">
+        <!-- <i class="fa-solid fa-moon light" id="light"></i> -->
+        <img class="light" id="" src="./images/icon-moon.svg" alt="">
         </div>
       </div>
       <div class="addtask">
         <input type="text" class="text" id="input" placeholder="Create a new to do...">
         <button class="addbtn" id="addbtn">
          <i class="fa-solid fa-plus"></i>
+         
         </button>
       </div>
 
@@ -41,15 +44,25 @@
 
       <div class="controls">
         <h6 id="left"><span id="task-left"></span> items left</h6>
-        <div>
+        <!-- <div>
           <p id="all">All</p>
           <p id="active">Active</p>
           <p id="completed">Completed</p>
-        </div>
+        </div> -->
         <p id="clear-completed">Clear Completed</p>
       </div>
+
+      <div class="sort">
+        <p class="sort-btn" id="all">All</p>
+        <p class="sort-btn" id="active">Active</p>
+        <p class="sort-btn" id="completed">Completed</p>
+      </div>
+  
     </div>
     
+    
+
+   
 
 
   </main>
