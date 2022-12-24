@@ -1,219 +1,212 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size:18px ;
-    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
 }
 
-body{
-    font-family:Josefin Sans ;
-    background-color: hsl(235, 21%, 11%);
-    width: 100vw;
-    
+body {
+  font-family: Josefin Sans;
+  background-color: hsl(235, 21%, 11%);
+  width: 100vw;
+  overflow-x: hidden;
 }
-main{
-    background: url(./images/bg-desktop-dark.jpg)no-repeat top center/cover;
-    background-size:100% 300px ;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    
+main {
+  background: url(./images/bg-desktop-dark.jpg) no-repeat top center/cover;
+  background-size: 100% 300px;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }
-.container{
-    width: 28rem;
-    height: 450px;
-    margin-top: 6rem;
-    
+.container {
+  width: 28rem;
+  height: 450px;
+  margin-top: 6rem;
 }
-.heading{
-    display: flex;
-    justify-content: space-between;
-    color: white;
+.heading {
+  display: flex;
+  justify-content: space-between;
+  color: white;
 }
-.heading h1{
-    font-size: 29px;
-    letter-spacing: 10px;
+.heading h1 {
+  font-size: 29px;
+  letter-spacing: 10px;
 }
-.container .addtask .text{
-    width: 100%;
-    background-color: hsl(235, 24%, 19%);
-    border: 0;
-    height: 2.5rem;
-    margin-top: 20px;
-    color: #fff;
-    padding-inline-start: 20px;
-    margin-bottom: 30px;
-    border-radius: 3px 0 0 3px ;
-    
+.container .addtask .text {
+  width: 100%;
+  background-color: hsl(235, 24%, 19%);
+  border: 0;
+  height: 2.9rem;
+  margin-top: 20px;
+  color: #fff;
+  padding-inline-start: 20px;
+  margin-bottom: 30px;
+  border-radius: 3px 0 0 3px;
 }
-.container .light{
-    display: none;
+.container .light {
+  display: none;
 }
-.container i:hover{
-    cursor: pointer;
+.container i:hover {
+  cursor: pointer;
 }
-.text:focus{
-    outline: none;
+.text:focus {
+  outline: none;
 }
-.addtask{
-    display: flex;
+.addtask {
+  display: flex;
 }
-.addbtn{
-    height: 2.5rem;
-    margin-top: 20px;
-    border: 4px solid hsl(235, 24%, 19%);
-    width: 3rem;
-    background-color: hsl(235, 21%, 11%);
-    color: #fff;
-    cursor: pointer;
+.addbtn {
+  height: 2.9rem;
+  margin-top: 20px;
+  border: 4px solid hsl(235, 24%, 19%);
+  width: 3rem;
+  background-color: hsl(235, 21%, 11%);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
 }
-.tasks{
-   background-color: hsl(235, 24%, 19%);
-   height: 80%;
-   border-radius: 3px;
-   padding-top: 5px;
-   overflow: auto;
-   
+.tasks {
+  background-color: hsl(235, 24%, 19%);
+  height: 80%;
+  border-radius: 5px 5px 0 0;
+  padding-top: 5px;
+  overflow: auto;
+  margin-top: -10px;
 }
-.tasks::-webkit-scrollbar { width: 0 !important }
-.task{
-    display: flex;
-    padding: 15px 20px;
-    width: 100%;
-    gap: 20px;
-    align-items: center;
-    color: white;
-    position: relative;
-    border-bottom: 1px solid hsl(235, 9%, 27%);
-    
-    
-    
+.tasks::-webkit-scrollbar {
+  width: 0 !important;
+}
+.task {
+  display: flex;
+  padding: 15px 20px;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
+  color: white;
+  position: relative;
+  border-bottom: 1px solid hsl(235, 9%, 27%);
 }
 
-.task .deletebtn, #editBtn{
-    color: hsl(234, 11%, 52%);
-    font-weight: 100;
-    position: absolute;
-    right: 20px;
-    
+.task .deletebtn,
+#editBtn {
+  color: hsl(234, 11%, 52%);
+  font-weight: 100;
+  position: absolute;
+  right: 20px;
 }
-#editBtn{
-    right: 50px;
+#editBtn {
+  right: 50px;
 }
-.task:hover{
-    cursor: pointer;
+.task:hover {
+  cursor: pointer;
 }
 
-.task .status{
-    width: 20px;
-    height: 20px;
-    box-sizing: content-box;
-    border-radius: 50%;
-    border: 2px solid hsl(235, 9%, 27%);
-    background-color: hsl(235, 24%, 19%);
-    padding: 3px;
-    color: #fff;
-   
+.task .status {
+  width: 20px;
+  height: 20px;
+  box-sizing: content-box;
+  border-radius: 50%;
+  border: 2px solid hsl(235, 9%, 27%);
+  background-color: hsl(235, 24%, 19%);
+  padding: 3px;
+  color: #fff;
 }
-.task .status:hover{
-    
-    border-color:hsl(235, 10%, 22%) ;
-    cursor: pointer;
+.task .status:hover {
+  border-color: hsl(235, 10%, 22%);
+  cursor: pointer;
 }
-.controls{
-   
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    background-color: hsl(235, 24%, 19%);
-    padding: 15px 20px;
-    border-top: 1px solid hsl(235, 9%, 27%);
-    position: relative;
-    align-items: center;
+.controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: hsl(235, 24%, 19%);
+  padding: 15px 20px;
+  border-top: 1px solid hsl(235, 9%, 27%);
+  position: relative;
+  align-items: center;
+  border-radius: 0 0 5px 5px;
 }
 .controls p {
-    font-size: 15px;
-    color:hsl(234, 11%, 52%) ;
-    cursor: pointer;
-    
+  font-size: 15px;
+  color: hsl(234, 11%, 52%);
+  cursor: pointer;
 }
-.controls h6{
-    font-size: 15px;
-    color:hsl(234, 11%, 52%) ;
-    font-weight: 100;
+.controls h6 {
+  font-size: 15px;
+  color: hsl(234, 11%, 52%);
+  font-weight: 100;
 }
-.controls p:hover{
-    color: #fff;
-   
+.controls p:hover {
+  color: #fff;
 }
-.controls div{
-    display: flex;
-    gap: 10px;
+.controls div {
+  display: flex;
+  gap: 10px;
 }
 
-.sort{
-    display: flex;
-    justify-content: space-around;
-    background-color: hsl(235, 24%, 19%);
-    margin-top: 10px;
-    padding-block: 15px;
-    border-radius: 5px;
+.sort {
+  display: flex;
+  justify-content: space-around;
+  background-color: hsl(235, 24%, 19%);
+  margin-top: 10px;
+  padding-block: 15px;
+  border-radius: 5px;
 }
-.sort p{
-    cursor: pointer;
+.sort p {
+  cursor: pointer;
 }
-.sort p:hover{
-    color: rgb(255, 255, 255) !important;
-    
+.sort p:hover {
+  color: rgb(255, 255, 255) !important;
 }
-.theme-change .light{
-    display: block;
+.theme-change .light {
+  display: block;
 }
-.theme-change .dark{
-    display: none;
+.theme-change .dark {
+  display: none;
 }
-.theme-change .container .addtask .text{
-    background-color: #fff;
-    color:hsl(235, 19%, 35%);
+.theme-change .container .addtask .text {
+  background-color: #fff;
+  color: hsl(235, 19%, 35%);
 }
-.theme-change .tasks{
-    background-color: #fff;
+.theme-change .tasks {
+  background-color: #fff;
 }
-.theme-change .task{
-    color: hsl(235, 19%, 35%);
+.theme-change .task {
+  color: hsl(235, 19%, 35%);
 }
-.theme-change .task .status{
-    border-color:hsl(231, 4%, 37%) ;
-    background-color: #fff;
+.theme-change .task .status {
+  border-color: hsl(231, 4%, 37%);
+  background-color: #fff;
 }
-.theme-change .task .deletebtn{
-    color: hsl(234, 11%, 52%);
-}
-
-.theme-change .controls, .theme-change .sort{
-    background-color: #fff;
-}
-.theme-change .controls p:hover, .theme-change .sort p:hover{
-    color: black !important;
-}
-.theme-change{
-    background-color: rgb(237, 237, 237);
-}
-.theme-change .addbtn{
-    background-color: rgb(229, 229, 229);
-    border-color: #fff;
-    color: hsl(235, 19%, 35%);
+.theme-change .task .deletebtn {
+  color: hsl(234, 11%, 52%);
 }
 
+.theme-change .controls,
+.theme-change .sort {
+  background-color: #fff;
+}
+.theme-change .controls p:hover,
+.theme-change .sort p:hover {
+  color: black !important;
+}
+.theme-change {
+  background-color: rgb(237, 237, 237);
+}
+.theme-change .addbtn {
+  background-color: rgb(229, 229, 229);
+  border-color: #fff;
+  color: hsl(235, 19%, 35%);
+}
 
 @media (max-width: 560px) {
-    .container{
-        width: 90%;
-        height: 380px;
-    }
-    .controls{
-        gap: 20px;
-    }
+  .container {
+    width: 90%;
+    height: 60vh;
+  }
+  .controls {
+    gap: 20px;
+  }
 }

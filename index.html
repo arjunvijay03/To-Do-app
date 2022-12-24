@@ -1,73 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/icon.webp">
-  
-  <title>Todo app</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Big+Shoulders+Display:wght@600;700&family=Josefin+Sans:wght@400;700&family=Kumbh+Sans:wght@400;700&family=Lexend+Deca&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/80d52a223c.js" crossorigin="anonymous"></script>
- 
-</head>
-<body>
-  <main>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/icon.webp" />
 
-    <div class="container" id="container">
-      <div class="heading">
-        <h1>TODO</h1>
-        <div class="theme" id="theme">
-        <!-- <i class="fa-solid fa-sun dark" id="dark"></i> -->
-        <img class="dark" id="dark" src="./images/icon-sun.svg" alt="">
-        <!-- <i class="fa-solid fa-moon light" id="light"></i> -->
-        <img class="light" id="" src="./images/icon-moon.svg" alt="">
+    <title>Todo app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Big+Shoulders+Display:wght@600;700&family=Josefin+Sans:wght@400;700&family=Kumbh+Sans:wght@400;700&family=Lexend+Deca&family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/80d52a223c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <div class="container" id="container">
+        <div class="heading">
+          <h1>TODO</h1>
+          <div class="theme" id="theme">
+            <!-- <i class="fa-solid fa-sun dark" id="dark"></i> -->
+            <img class="dark" id="dark" src="./images/icon-sun.svg" alt="" />
+            <!-- <i class="fa-solid fa-moon light" id="light"></i> -->
+            <img class="light" id="" src="./images/icon-moon.svg" alt="" />
+          </div>
         </div>
-      </div>
-      <div class="addtask">
-        <input type="text" class="text" id="input" placeholder="Create a new to do...">
-        <button class="addbtn" id="addbtn">
-         <i class="fa-solid fa-plus"></i>
-         
-        </button>
-      </div>
+        <div class="addtask">
+          <input
+            type="text"
+            class="text"
+            id="input"
+            placeholder="Create a new to do..."
+          />
+          <button class="addbtn" id="addbtn">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
 
-      <div class="tasks" id="tasks">
+        <div class="tasks" id="tasks"></div>
 
-
-
-
-      </div>
-
-      <div class="controls">
-        <h6 id="left"><span id="task-left"></span> items left</h6>
-        <!-- <div>
+        <div class="controls">
+          <h6 id="left"><span id="task-left"></span> items left</h6>
+          <!-- <div>
           <p id="all">All</p>
           <p id="active">Active</p>
           <p id="completed">Completed</p>
         </div> -->
-        <p id="clear-completed">Clear Completed</p>
+          <p id="clear-completed">Clear Completed</p>
+        </div>
+
+        <div class="sort">
+          <p class="sort-btn" id="all">All</p>
+          <p class="sort-btn" id="active">Active</p>
+          <p class="sort-btn" id="completed">Completed</p>
+        </div>
       </div>
-
-      <div class="sort">
-        <p class="sort-btn" id="all">All</p>
-        <p class="sort-btn" id="active">Active</p>
-        <p class="sort-btn" id="completed">Completed</p>
-      </div>
-  
-    </div>
-    
-    
-
-   
-
-
-  </main>
-
-  
-</body>
-<script src="main.js"></script>
+    </main>
+  </body>
+  <script src="main.js"></script>
 </html>
