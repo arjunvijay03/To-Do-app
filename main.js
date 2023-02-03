@@ -1,36 +1,31 @@
-let input = document.getElementById("input");
-let addBtn = document.getElementById("addbtn");
-let tasks = document.getElementById("tasks");
-let checkBtn = document.getElementsByClassName("status");
-let all = document.getElementById("all");
-let active = document.getElementById("active");
-let completed = document.getElementById("completed");
-let clrCompleted = document.getElementById("clear-completed");
-let tasksLeftIndicater = document.getElementById("task-left");
-let themeChange = document.getElementById("theme");
+const input = document.getElementById("input");
+const addBtn = document.getElementById("addbtn");
+const tasks = document.getElementById("tasks");
+const checkBtn = document.getElementsByClassName("status");
+const all = document.getElementById("all");
+const active = document.getElementById("active");
+const completed = document.getElementById("completed");
+const clrCompleted = document.getElementById("clear-completed");
+const tasksLeftIndicater = document.getElementById("task-left");
+const themeChange = document.getElementById("theme");
 let tasksLeft;
 let idOfEditTask = 0;
 
 let data = JSON.parse(localStorage.getItem("data")) || [];
 
-let idd = JSON.parse(localStorage.getItem("forId")) || 0;
-
-let generateTask = () => {
+const generateTask = () => {
   tasks.innerHTML = data
-    .map((x, y) => {
+    .map((data) => {
+      const { id, task } = data;
       return `
         <div class="task" >
-        <button onClick="taskCheck(id)" class="status" id="${x.id}">
+        <button onClick="taskCheck(id)" class="status" id="${id}">
         
         </button>
-        <p>${x.task}</p>
-        <i onClick="editTask(${
-          x.id
-        })" class="fa-solid fa-pen-to-square" id="editBtn"></i>
+        <p>${task}</p>
+        <i onClick="editTask(${id})" class="fa-solid fa-pen-to-square" id="editBtn"></i>
 
-        <i onClick="deleteTask(id)" class="fa-solid fa-x deletebtn" id="${
-          x.id + 1
-        }" ></i>
+        <i onClick="deleteTask(${id})" class="fa-solid fa-x deletebtn"></i>
         
 
       </div>
@@ -38,24 +33,19 @@ let generateTask = () => {
         `;
     })
     .join("");
-
-  all.style.color = "hsl(220, 98%, 61%)";
-  completed.style.color = "hsl(234, 11%, 52%)";
-  active.style.color = "hsl(234, 11%, 52%)";
+  document.querySelector(".active-sort").classList.remove("active-sort");
+  all.classList.add("active-sort");
 };
 generateTask();
 
-let addTask = () => {
+const addTask = () => {
   if (input.value !== "") {
     if (idOfEditTask === 0) {
       let newTask = {
-        id: idd,
+        id: Date.now(),
         task: input.value,
         status: false,
       };
-      idd++;
-
-      localStorage.setItem("forId", JSON.stringify(idd));
       data.unshift(newTask);
     } else {
       for (let i = 0; i < data.length; i++) {
@@ -77,21 +67,14 @@ let addTask = () => {
 };
 
 addBtn.addEventListener("click", addTask);
-input.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
+input.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
     addTask();
   }
 });
-let deleteTask = (x) => {
-  let id = x - 1;
-  let index;
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].id == id) {
-      index = data.indexOf(data[i]);
-    }
-  }
+const deleteTask = (id) => {
+  data = data.filter((todo) => todo.id !== id);
 
-  data.splice(index, 1);
   generateTask();
 
   localStorage.setItem("data", JSON.stringify(data));
@@ -99,7 +82,7 @@ let deleteTask = (x) => {
   countRemaining();
 };
 
-let taskCheck = (x) => {
+const taskCheck = (x) => {
   let searchId = x;
 
   let search = data.find((y) => y.id == searchId);
@@ -145,9 +128,8 @@ let statusSet = () => {
 };
 
 all.addEventListener("click", () => {
-  all.style.color = "hsl(220, 98%, 61%)";
-  completed.style.color = "hsl(234, 11%, 52%)";
-  active.style.color = "hsl(234, 11%, 52%)";
+  document.querySelector(".active-sort").classList.remove("active-sort");
+  all.classList.add("active-sort");
   generateTask();
   statusSet(data);
 });
@@ -168,9 +150,9 @@ active.addEventListener("click", () => {
       }
     }
   }
-  all.style.color = "hsl(234, 11%, 52%)";
-  completed.style.color = "hsl(234, 11%, 52%)";
-  active.style.color = "hsl(220, 98%, 61%)";
+
+  document.querySelector(".active-sort").classList.remove("active-sort");
+  active.classList.add("active-sort");
 });
 
 completed.addEventListener("click", () => {
@@ -191,20 +173,17 @@ completed.addEventListener("click", () => {
     }
   }
 
-  all.style.color = "hsl(234, 11%, 52%)";
-  completed.style.color = "hsl(220, 98%, 61%)";
-  active.style.color = "hsl(234, 11%, 52%)";
-
+  document.querySelector(".active-sort").classList.remove("active-sort");
+  completed.classList.add("active-sort");
   statusSet();
 });
 clrCompleted.addEventListener("click", () => {
-  let completedData = data.filter((x) => x.status === false);
-  data = completedData;
+  data = data.filter((x) => x.status === false);
   localStorage.setItem("data", JSON.stringify(data));
   generateTask();
 });
 
-let countRemaining = () => {
+const countRemaining = () => {
   remainingTasks = data.filter((x) => x.status === false);
   tasksLeft = remainingTasks.length;
 
@@ -217,9 +196,8 @@ themeChange.addEventListener("click", () => {
   document.querySelector("body").classList.toggle("theme-change");
 });
 
-let editTask = (x) => {
+const editTask = (x) => {
   taskToEdit = data.find((y) => y.id === x);
-  console.log(taskToEdit);
   idOfEditTask = taskToEdit.id;
   input.value = taskToEdit.task;
 };
