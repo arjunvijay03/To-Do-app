@@ -7,9 +7,11 @@ const active = document.getElementById("active");
 const completed = document.getElementById("completed");
 const clrCompleted = document.getElementById("clear-completed");
 const tasksLeftIndicater = document.getElementById("task-left");
-const themeChange = document.getElementById("theme");
+const themeLabel = document.getElementById("theme");
+const themeCheckBox = document.getElementById("theme-checkbox");
 let tasksLeft;
 let idOfEditTask = 0;
+let theme = localStorage.getItem("theme");
 
 let data = JSON.parse(localStorage.getItem("data")) || [];
 
@@ -192,9 +194,31 @@ const countRemaining = () => {
 
 statusSet();
 countRemaining();
-themeChange.addEventListener("click", () => {
-  document.querySelector("body").classList.toggle("theme-change");
+
+themeCheckBox.addEventListener("change", () => {
+  themeCheckBoxHandle();
 });
+const themeCheckBoxHandle = () => {
+  if (themeCheckBox.checked == true) {
+    theme = "light";
+    localStorage.setItem("theme", "light");
+  } else {
+    theme = "dark";
+    localStorage.setItem("theme", "dark");
+  }
+  themeChangeFun();
+};
+const themeChangeFun = () => {
+  if (theme == "light") {
+    document.querySelector("body").classList.add("light-theme");
+    themeCheckBox.checked = true;
+  } else if (theme == "dark") {
+    document.querySelector("body").classList.remove("light-theme");
+    themeCheckBox.checked = false;
+  }
+};
+
+themeChangeFun();
 
 const editTask = (x) => {
   taskToEdit = data.find((y) => y.id === x);

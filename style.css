@@ -164,42 +164,42 @@ main {
 .sort .active-sort {
   color: hsl(220, 98%, 61%);
 }
-.theme-change .light {
+.light-theme .light {
   display: block;
 }
-.theme-change .dark {
+.light-theme .dark {
   display: none;
 }
-.theme-change .container .addtask .text {
+.light-theme .container .addtask .text {
   background-color: #fff;
   color: hsl(235, 19%, 35%);
 }
-.theme-change .tasks {
+.light-theme .tasks {
   background-color: #fff;
 }
-.theme-change .task {
+.light-theme .task {
   color: hsl(235, 19%, 35%);
 }
-.theme-change .task .status {
+.light-theme .task .status {
   border-color: hsl(231, 4%, 37%);
   background-color: #fff;
 }
-.theme-change .task .deletebtn {
+.light-theme .task .deletebtn {
   color: hsl(234, 11%, 52%);
 }
 
-.theme-change .controls,
-.theme-change .sort {
+.light-theme .controls,
+.light-theme .sort {
   background-color: #fff;
 }
-.theme-change .controls p:hover,
-.theme-change .sort p:hover {
+.light-theme .controls p:hover,
+.light-theme .sort p:hover {
   color: black !important;
 }
-.theme-change {
+.light-theme {
   background-color: rgb(237, 237, 237);
 }
-.theme-change .addbtn {
+.light-theme .addbtn {
   background-color: rgb(229, 229, 229);
   border-color: #fff;
   color: hsl(235, 19%, 35%);
